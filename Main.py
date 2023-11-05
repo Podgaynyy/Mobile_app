@@ -15,7 +15,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.floatlayout import FloatLayout
 import random
 
-
+#Try yo add comments to be able commit version
 
 # from kivy.animation import Animation
 # from kivy.clock import Clock
@@ -58,15 +58,17 @@ class MainApp(App):
     def getListe():
         global liste
         datei = open('woerterbuch.txt', 'r', encoding='utf-8')
-        wortschatz = datei.readlines()
-        datei.close()
-        for zeile in wortschatz:
-            if zeile == '\n' or zeile == ' \n':
-                pass
-            else:
-                vokabel = zeile.split()
-                liste.append(vokabel)
-
+        try:
+            wortschatz = datei.readlines()
+            datei.close()
+            for zeile in wortschatz:
+                if zeile == '\n' or zeile == ' \n':
+                    pass
+                else:
+                    vokabel = zeile.split()
+                    liste.append(vokabel)
+        except:
+            pass
 
 
 
